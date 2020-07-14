@@ -1,11 +1,13 @@
 import React from 'react';
+import Card from './Card';
 
-function Column() {
+function Kolon() {
 	return (
 		<div>
+			<Card />
 			<h1>my bangladesh </h1>
 		</div>
 	);
 }
 
-export default Column;
+export default Kolon;

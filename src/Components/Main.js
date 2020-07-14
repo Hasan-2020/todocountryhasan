@@ -1,11 +1,12 @@
 import React from 'react';
-// import Column from './Components/Column.js';
+import Kolon from './Kolon';
+
 import './style.css';
 
 function Main() {
 	return (
 		<main className="main">
-			{/* <Column /> */}
+			<Kolon />
 			<div>
 				<form className="main-form">
 					<label htmlFor="GroupName" className="main-form-show-label">
