@@ -1,9 +1,11 @@
 import React from 'react';
+// import Column from './Components/Column.js';
 import './style.css';
 
 function Main() {
 	return (
 		<main className="main">
+			{/* <Column /> */}
 			<div>
 				<form className="main-form">
 					<label htmlFor="GroupName" className="main-form-show-label">
