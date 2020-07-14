@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/todocountryhasan/static/css/main.54a751c4.chunk.css",
+    "main.js": "/todocountryhasan/static/js/main.8fbd4985.chunk.js",
+    "main.js.map": "/todocountryhasan/static/js/main.8fbd4985.chunk.js.map",
+    "runtime-main.js": "/todocountryhasan/static/js/runtime-main.b4f3ca07.js",
+    "runtime-main.js.map": "/todocountryhasan/static/js/runtime-main.b4f3ca07.js.map",
+    "static/js/2.a5aca896.chunk.js": "/todocountryhasan/static/js/2.a5aca896.chunk.js",
+    "static/js/2.a5aca896.chunk.js.map": "/todocountryhasan/static/js/2.a5aca896.chunk.js.map",
+    "index.html": "/todocountryhasan/index.html",
+    "precache-manifest.a4af22bc323b91a138693e265a69afec.js": "/todocountryhasan/precache-manifest.a4af22bc323b91a138693e265a69afec.js",
+    "service-worker.js": "/todocountryhasan/service-worker.js",
+    "static/css/main.54a751c4.chunk.css.map": "/todocountryhasan/static/css/main.54a751c4.chunk.css.map",
+    "static/js/2.a5aca896.chunk.js.LICENSE.txt": "/todocountryhasan/static/js/2.a5aca896.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b4f3ca07.js",
+    "static/js/2.a5aca896.chunk.js",
+    "static/css/main.54a751c4.chunk.css",
+    "static/js/main.8fbd4985.chunk.js"
+  ]
+}
