@@ -3,12 +3,14 @@ import Kolon from './Kolon';
 
 import './style.css';
 
-function Main() {
+function Main(props) {
+	console.log(props);
+	const { ifClickEvent, handleChange, ifClickGroup } = props;
 	return (
 		<main className="main">
 			<Kolon />
 			<div>
-				<form className="main-form">
+				<form className={'main-form' + (ifClickGroup ? 'toggle' : ' ')}>
 					<label htmlFor="GroupName" className="main-form-show-label">
 						Country Name
 						<input type="text" name="groupNameInput" className="main-form-show-input" />
@@ -16,14 +18,14 @@ function Main() {
 					<input type="Submit" className="main-form-show-submit" />
 				</form>
 
-				<form className="main-form">
+				<form className={'main-form' + (ifClickGroup ? 'toggle' : ' ')}>
 					<label htmlFor="firstName" className="main-form-show-label">
 						Name and Surname
-						<input name="eventFname" type="text" className="main-form-show-input" />
+						<input name="eventHeader" type="text" className="main-form-show-input" />
 					</label>
 					<label htmlFor="LastName" className="main-form-show-label">
 						Tell Us Yourself
-						<textarea name="eventLname" type="text" className="main-form-show-input" />
+						<textarea name="eventContent" type="text" className="main-form-show-input" />
 					</label>
 					<label htmlFor="date" className="main-form-show-label">
 						Birthdate

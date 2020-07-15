@@ -38,13 +38,6 @@
 
 /* pop-up */
 
-.main-form {
-	width: 300px;
-	border-radius: 5px;
-	background-color: #f2f2f2;
-	padding: 20px;
-}
-
 label {
 	font-weight: 700;
 	display: flex;
@@ -52,58 +45,64 @@ label {
 	margin-bottom: 25px;
 }
 
-input[type='text'],
+input {
+	margin-top: 8px;
+
+	border: 1px solid #f5f5f5;
+	font-size: 12px;
+	padding: 8px;
+}
+textarea {
+	margin-top: 8px;
+	padding: 8px;
+	border: 1px solid #f5f2f2;
+}
+
 select {
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-}
+	padding: 4px;
 
-input[type='submit'] {
-	width: 100%;
-	background-color: #4caf50;
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
 	border: none;
-	border-radius: 4px;
-	cursor: pointer;
+	margin-top: 8px;
+	background-color: rgb(243, 240, 245);
 }
 
-input[type='date'] {
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
+.main {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 100%;
+	padding: 15px;
+	background-color: #ddd;
 }
 
-input[type='textarea'] {
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
+.main-form {
+	display: block;
+	top: 72px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	opacity: 1;
+	min-width: 305px;
+	width: 16%;
+	background-color: rgb(168, 168, 168);
+	flex-direction: column;
+	padding: 20px;
+	border-top-left-radius: 5px;
+	border-left: 1px solid rgb(236, 235, 235);
+	border-top: 1px solid rgb(255, 255, 255);
 }
 
-input[type='submit']:hover {
-	background-color: #45a049;
-}
-
-option {
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid rgb(155, 154, 154);
-	border-radius: 4px;
-	box-sizing: border-box;
+.toggle {
+	top: 72px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	min-width: 305px;
+	width: 16%;
+	background-color: black;
+	display: none;
+	flex-direction: column;
+	padding: 20px;
+	border-top-left-radius: 5px;
+	border-left: 3px solid black;
+	border-top: 3px solid black;
 }
