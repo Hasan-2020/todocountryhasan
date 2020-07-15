@@ -22,12 +22,12 @@ class App extends Component {
 		const { name } = e.target;
 		const { ifClickGroup, ifClickEvent } = this.state;
 		let val;
-		if (name === ifClickGroup) {
-			console.log('value fo Group');
+		if (name === 'ifClickGroup') {
+			console.log('value fo Group', ifClickGroup);
 			val = ifClickGroup;
 		}
-		if (name === ifClickEvent) {
-			console.log('value of Event');
+		if (name === 'ifClickEvent') {
+			console.log('value of Event', ifClickEvent);
 			val = ifClickEvent;
 		}
 		this.setState({ [name]: !val });

@@ -3,10 +3,10 @@ import Card from './Card';
 
 function Kolon() {
 	return (
-		<div>
+		<section className="column">
+			<h2 className="column-header"></h2>
 			<Card />
-			<h1>my bangladesh </h1>
-		</div>
+		</section>
 	);
 }
 

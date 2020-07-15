@@ -10,7 +10,7 @@ function Main(props) {
 		<main className="main">
 			<Kolon />
 			<div>
-				<form className={'main-form' + (ifClickGroup ? 'toggle' : ' ')}>
+				<form className={'main-form' + (ifClickGroup ? '-toggle' : ' ')}>
 					<label htmlFor="GroupName" className="main-form-show-label">
 						Country Name
 						<input type="text" name="groupNameInput" className="main-form-show-input" />
@@ -18,7 +18,7 @@ function Main(props) {
 					<input type="Submit" className="main-form-show-submit" />
 				</form>
 
-				<form className={'main-form' + (ifClickGroup ? 'toggle' : ' ')}>
+				<form className={'main-form' + (ifClickEvent ? '-toggle' : ' ')}>
 					<label htmlFor="firstName" className="main-form-show-label">
 						Name and Surname
 						<input name="eventHeader" type="text" className="main-form-show-input" />
