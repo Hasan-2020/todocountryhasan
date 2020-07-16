@@ -47,7 +47,7 @@ class App extends Component {
 					groupName: 'Biology',
 					cards: [
 						{
-							header: 'Ahmad Faisal',
+							header: 'Ahmad Abbasa',
 							text: 'He is from Pakistan',
 							imgSrc: '',
 							date: '18-06-2020',
