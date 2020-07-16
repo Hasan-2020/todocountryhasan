@@ -45,11 +45,16 @@ label {
 	margin-bottom: 25px;
 }
 
-input {
-	margin-top: 8px;
-	border: 1px solid #f5f5f5;
-	font-size: 12px;
-	padding: 8px;
+.main-form-show-input {
+	font-family: 'Roboto', sans-serif;
+	outline: 0;
+	background: #f5f4f4;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
 }
 textarea {
 	margin-top: 8px;
@@ -64,12 +69,28 @@ select {
 	margin-top: 8px;
 	background-color: rgb(243, 240, 245);
 }
+.main-form-show-submit {
+	font-family: 'Roboto', sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #4caf50;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #ffffff;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.main-form-show-submit:hover {
+	background: #43a047;
+}
 
 .main {
 	display: flex;
 	flex-wrap: wrap;
 	max-width: 100%;
-	padding: 15px;
+	padding: 30px;
 	background-color: rgb(255, 255, 255);
 }
 
@@ -80,11 +101,11 @@ select {
 	right: 0;
 	bottom: 0;
 	opacity: 1;
-	min-width: 305px;
+	min-width: px;
 	width: 16%;
 	background-color: rgb(168, 168, 168);
 	flex-direction: column;
-	padding: 20px;
+	padding: 30px;
 	border-top-left-radius: 5px;
 	border-left: 1px solid rgb(236, 235, 235);
 	border-top: 1px solid rgb(255, 255, 255);
@@ -100,7 +121,7 @@ select {
 	background-color: rgb(211, 211, 211);
 	display: block;
 	flex-direction: column;
-	padding: 20px;
+	padding: 30px;
 	border-top-left-radius: 5px;
 	border-left: 3px solid rgb(146, 146, 146);
 	border-top: 3px solid black;
@@ -130,4 +151,64 @@ select {
 	color: rgb(15, 15, 15);
 	padding: 3px;
 	border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+/* Cards */
+
+.card {
+	color: black;
+	margin-bottom: 18px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.384);
+	background-color: #e0e0e0;
+	padding: 10px;
+	/* display: flex; */
+	box-sizing: border-box;
+}
+
+.card-left {
+	font-size: 14px;
+	font-weight: 400;
+
+	box-sizing: border-box;
+	background-color: #a9eec6;
+
+	text-align: center;
+}
+
+.card-left-header {
+	padding: 4px;
+	font-size: 18px;
+	font-weight: bold;
+	border-bottom: 1px solid red;
+}
+
+.card-left-text {
+	line-height: 1.5;
+	padding: 10px;
+}
+
+.card-right {
+	background-color: #929090;
+	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+	color: honeydew;
+}
+
+.button-card {
+	font-family: 'Roboto', sans-serif;
+	text-transform: uppercase;
+	border-radius: 5px;
+	margin-top: 5px;
+	outline: 0;
+	background: #f1a3ad;
+	width: 40%;
+	border: 0;
+	padding: 5px;
+	color: #ffffff;
+	font-size: 14px;
+	cursor: pointer;
 }

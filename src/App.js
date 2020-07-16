@@ -10,21 +10,50 @@ class App extends Component {
 			ifClickGroup: 0,
 			groupNameInput: '',
 			eventGroupName: 'Physics',
+			groupNameInput: '',
+			eventHeader: '',
+			eventContent: '',
+			eventTags: '2',
+			eventDate: '',
 			groups: [
 				{
-					groupID: 1,
+					groupId: 1,
 					groupName: 'Physics',
-					cards: [],
+					cards: [
+						{
+							header: 'Tauhid Hasan',
+							text: 'He is from Bangladesh ',
+							imgSrc: '',
+							date: '16-06-2020',
+							tags: 1,
+						},
+					],
 				},
 				{
-					groupID: 2,
+					groupId: 2,
 					groupName: 'Chemistry',
-					cards: [],
+					cards: [
+						{
+							header: 'Yakup Akgöçmen',
+							text: 'He is from Turkey',
+							imgSrc: '',
+							date: '17-06-2020',
+							tags: 2,
+						},
+					],
 				},
 				{
-					groupID: 3,
+					groupId: 3,
 					groupName: 'Biology',
-					cards: [],
+					cards: [
+						{
+							header: 'Ahmad Faisal',
+							text: 'He is from Pakistan',
+							imgSrc: '',
+							date: '18-06-2020',
+							tags: 3,
+						},
+					],
 				},
 			],
 		};
@@ -32,6 +61,7 @@ class App extends Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.addGroup = this.addGroup.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.cardDelete = this.cardDelete.bind(this);
 	}
 
 	addGroup = (e) => {
@@ -49,16 +79,38 @@ class App extends Component {
 		e.preventDefault();
 	};
 
-	handleSubmit = () => {
+	handleSubmit(e) {
 		const { groups } = this.state;
-		const { eventGroupName } = this.state;
+		const { eventHeader, eventContent, eventDate, eventTags, eventGroupName } = this.state;
 		let index;
 		groups.map((val, i) => {
 			if (val.groupName === eventGroupName) {
 				index = i;
 			}
 		});
-	};
+
+		const oldCard = groups[index].cards;
+		const newCard = {
+			header: eventHeader,
+			text: eventContent,
+			imgSrc: '',
+			date: eventDate,
+			tag: eventTags,
+		};
+
+		oldCard.push(newCard);
+		console.log(oldCard);
+		this.setState({
+			groups,
+			eventHeader: '',
+			eventContent: '',
+			eventDate: '',
+			eventTags: 2,
+			eventGroupName: 'Physics',
+			ifClickEvent: 0,
+		});
+		e.preventDefault();
+	}
 
 	handleChange(e) {
 		this.setState({ [e.target.name]: e.target.value });
@@ -80,12 +132,31 @@ class App extends Component {
 		this.setState({ [name]: !val });
 	};
 
+	cardDelete(e, groupId) {
+		console.log('cardDelete');
+		console.log(e);
+	}
+
 	render() {
-		const { ifClickGroup, ifClickEvent, eventGroupName, groupNameInput, groups } = this.state;
+		const { ifClickGroup, ifClickEvent, eventGroupName, groupNameInput, groups, eventHeader, eventContent, eventDate, eventTags } = this.state;
 		return (
 			<div className="App">
 				<Navbar toggleForm={this.toggleForm} />
-				<Main ifClickGroup={ifClickGroup} ifClickEvent={ifClickEvent} handleChange={this.handleChange} eventGroupName={eventGroupName} groupNameInput={groupNameInput} addGroup={this.addGroup} groups={groups} handleSubmit={this.handleSubmit} />
+				<Main
+					ifClickGroup={ifClickGroup}
+					ifClickEvent={ifClickEvent}
+					handleChange={this.handleChange}
+					eventGroupName={eventGroupName}
+					groupNameInput={groupNameInput}
+					addGroup={this.addGroup}
+					groups={groups}
+					handleSubmit={this.handleSubmit}
+					eventHeader={eventHeader}
+					eventContent={eventContent}
+					eventDate={eventDate}
+					eventTags={eventTags}
+					cardDelete={this.cardDelete}
+				/>
 			</div>
 		);
 	}
