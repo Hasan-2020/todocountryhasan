@@ -31,9 +31,10 @@ class App extends Component {
 		this.toggleForm = this.toggleForm.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.addGroup = this.addGroup.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	addGroup(e) {
+	addGroup = (e) => {
 		const { groups, groupNameInput } = this.state;
 		let lastGroup = groups[groups.length - 1];
 		const newGroupId = lastGroup.groupId + 1;
@@ -43,10 +44,21 @@ class App extends Component {
 			cards: [],
 		};
 
-		groups = [...groups, newGroups];
+		groups.push(newGroups);
 		this.setState({ groups, groupNameInput: '', ifClickGroup: 0 });
 		e.preventDefault();
-	}
+	};
+
+	handleSubmit = () => {
+		const { groups } = this.state;
+		const { eventGroupName } = this.state;
+		let index;
+		groups.map((val, i) => {
+			if (val.groupName === eventGroupName) {
+				index = i;
+			}
+		});
+	};
 
 	handleChange(e) {
 		this.setState({ [e.target.name]: e.target.value });
@@ -69,11 +81,11 @@ class App extends Component {
 	};
 
 	render() {
-		const { ifClickGroup, ifClickEvent, eventKolonName, kolonNameInput, groups } = this.state;
+		const { ifClickGroup, ifClickEvent, eventGroupName, groupNameInput, groups } = this.state;
 		return (
 			<div className="App">
 				<Navbar toggleForm={this.toggleForm} />
-				<Main ifClickGroup={ifClickGroup} ifClickEvent={ifClickEvent} handleChange={this.handleChange} eventkolonName={eventKolonName} KolonNameInput={kolonNameInput} addKolon={this.addKolon} groups={groups} />
+				<Main ifClickGroup={ifClickGroup} ifClickEvent={ifClickEvent} handleChange={this.handleChange} eventGroupName={eventGroupName} groupNameInput={groupNameInput} addGroup={this.addGroup} groups={groups} handleSubmit={this.handleSubmit} />
 			</div>
 		);
 	}
