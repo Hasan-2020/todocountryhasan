@@ -5,17 +5,17 @@ import './style.css';
 
 function Main(props) {
 	console.log(props);
-	const { ifClickEvent, handleChange, ifClickGroup } = props;
+	const { ifClickEvent, handleChange, ifClickGroup, groups, groupNameInput } = props;
 	return (
 		<main className="main">
-			<Kolon />
+			<Kolon groups={groups} />
 			<div>
 				<form className={'main-form' + (ifClickGroup ? '-toggle' : ' ')}>
 					<label htmlFor="GroupName" className="main-form-show-label">
 						Country Name
-						<input type="text" name="groupNameInput" className="main-form-show-input" />
+						<input value={groupNameInput} onChange={handleChange} type="text" name="groupNameInput" className="main-form-show-input" />
 					</label>
-					<input type="Submit" className="main-form-show-submit" />
+					<input onclick={groups} type="Submit" className="main-form-show-submit" />
 				</form>
 
 				<form className={'main-form' + (ifClickEvent ? '-toggle' : ' ')}>
