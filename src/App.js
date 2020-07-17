@@ -47,7 +47,7 @@ class App extends Component {
 					groupName: 'Biology',
 					cards: [
 						{
-							header: 'Ahmad Faisal',
+							header: 'Ahmad Khalil',
 							text: 'He is from Pakistan',
 							imgSrc: '',
 							date: '18-06-2020',
@@ -163,3 +163,5 @@ class App extends Component {
 }
 
 export default App;
+
+// Bu uygulama da State Yok
