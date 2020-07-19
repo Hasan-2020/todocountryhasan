@@ -1,18 +1,19 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './style.css';
 
 class Navbar extends PureComponent {
 	render() {
-		const { toggleForm } = this.props;
+		const { showForm } = this.props;
 		return (
 			<header className="header">
 				<div className="header-logo">NoToRacism! </div>
 				<nav className="header-menu">
-					<button onClick={toggleForm} className="header-menu-button" type="button" name="ifClickGroup">
+					<button onClick={showForm} className="header-menu-button" type="button" name="ifClickGroup">
 						Add Column
 					</button>
-					<button onClick={toggleForm} className="header-menu-button" type="button" name="ifClickEvent">
+					<button onClick={showForm} className="header-menu-button" type="button" name="ifClickEvent">
 						Add Cards
 					</button>
 				</nav>
@@ -23,27 +24,21 @@ class Navbar extends PureComponent {
 Navbar.propTypes = {
 	showForm: PropTypes.func.isRequired,
 };
-export default Navbar;
 
-// import React from 'react';
-// import './style.css';
+const mapStateToProps = (state) => {
+	return {
+		// ifClickEvent: state.ifClickEvent,
+		// ifClickGroup: state.ifClickGroup,
+	};
+};
 
-// function Navbar(props) {
-// 	console.log(props);
-// 	// const { toggleForm } = this.props;
-// 	return (
-// 		<header className="header">
-// 			<div className="header-logo">NoToRacism! </div>
-// 			<nav className="header-menu">
-// 				<button onClick={this.toggleForm} className="header-menu-button" type="button" name="ifClickGroup">
-// 					Add Column
-// 				</button>
-// 				<button onClick={this.toggleForm} className="header-menu-button" type="button" name="ifClickEvent">
-// 					Add Cards
-// 				</button>
-// 			</nav>
-// 		</header>
-// 	);
-// }
-
-// export default Navbar;
+const mapDispatchToProps = (dispatch) => {
+	return {
+		showForm: (e) =>
+			dispatch({
+				type: 'SHOW_FORM',
+				name: e.target.name,
+			}),
+	};
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

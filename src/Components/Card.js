@@ -1,28 +1,50 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './style.css';
 
-function Card({ Cards = ['any'], cardDelete, groupId }) {
-	console.log(groupId);
+function Card({ Cards = ['any'], groupId, deleteCard }) {
 	return Cards.map((card, i) => {
 		if (card !== 'any') {
 			return (
-				<div key={card.header + i} className="card">
-					<div className="card-left">
-						<div className="card-left-header">{card.header}</div>
-						<div className="card-left-text">{card.text}</div>
-						<div className="card-left-tag">{card.tag}</div>
+				<section key={Math.random()} className="card">
+					<div className="card-info">
+						<div className="card-info-left">
+							<div className="card-info-left-header">{card.header}</div>
+							<div className="card-left-text">{card.text}</div>
+							<div className="card-left-tag">{card.tag}</div>
+						</div>
+						<div className="card-info-right">
+							<div className="card-info-right-image">IMG</div>
+							<div className="card-info-right-date">{card.date}</div>
+						</div>
 					</div>
-					<div className="card-right">
-						<div className="card-right-image">IMG</div>
-						<div className="card-right-date">{card.date}</div>
+					<div>
+						<button
+							className="card-buttons"
+							onClick={() => {
+								deleteCard(groupId, i);
+							}}
+							type="button"
+						>
+							Delete Card
+						</button>
 					</div>
-					<button onClick={() => cardDelete(groupId)} className="button-card">
-						Delete Cards
-					</button>
-				</div>
+				</section>
 			);
 		}
-		return <div key={card}>Sorry!</div>;
+		return <div key={card}>Nothing to add</div>;
 	});
 }
-export default Card;
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		deleteCard: (groupId, cardIndex) =>
+			dispatch({
+				type: 'DELETE_CARD',
+				groupId,
+				cardIndex,
+			}),
+	};
+};
+
+export default connect(null, mapDispatchToProps)(Card);

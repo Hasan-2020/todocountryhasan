@@ -45,13 +45,17 @@ label {
 	margin-bottom: 25px;
 }
 
+.dateDate {
+	margin-top: 6px;
+}
+
 .main-form-show-input {
 	font-family: 'Roboto', sans-serif;
 	outline: 0;
 	background: #f5f4f4;
 	width: 100%;
 	border: 0;
-	margin: 0 0 15px;
+	margin: 6px 0 15px;
 	padding: 15px;
 	box-sizing: border-box;
 	font-size: 14px;
@@ -66,7 +70,7 @@ select {
 	padding: 4px;
 
 	border: none;
-	margin-top: 8px;
+	margin-top: 6px;
 	background-color: rgb(243, 240, 245);
 }
 .main-form-show-submit {
@@ -139,7 +143,7 @@ select {
 	margin-left: 10px;
 	width: 30%;
 	border: 1px solid rgb(173, 173, 173);
-	box-shadow: 5px 5px 10px 0px rgba(99, 99, 99, 0.384);
+	box-shadow: 3px 3px 6px 0px rgba(99, 99, 99, 0.384);
 	min-width: 310px;
 	margin-bottom: 40px;
 	text-align: center;
@@ -157,16 +161,18 @@ select {
 
 .card {
 	color: black;
+
 	margin-bottom: 18px;
+	margin-top: 15px;
 	border-radius: 5px;
-	box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.384);
-	background-color: #e0e0e0;
+	box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.384);
+	background-color: #f0ecec;
 	padding: 10px;
 	/* display: flex; */
 	box-sizing: border-box;
 }
 
-.card-left {
+.card-info-left {
 	font-size: 14px;
 	font-weight: 400;
 
@@ -176,11 +182,11 @@ select {
 	text-align: center;
 }
 
-.card-left-header {
+.card-info-left-header {
 	padding: 4px;
 	font-size: 18px;
 	font-weight: bold;
-	border-bottom: 1px solid red;
+	border-bottom: 1px dashed rgb(63, 60, 60);
 }
 
 .card-left-text {
@@ -188,8 +194,8 @@ select {
 	padding: 10px;
 }
 
-.card-right {
-	background-color: #929090;
+.card-info-right {
+	background-color: #a8a7a7;
 	margin-left: auto;
 	display: flex;
 	flex-direction: column;
@@ -198,17 +204,41 @@ select {
 	color: honeydew;
 }
 
-.button-card {
+.card-buttons {
 	font-family: 'Roboto', sans-serif;
 	text-transform: uppercase;
 	border-radius: 5px;
 	margin-top: 5px;
 	outline: 0;
-	background: #f1a3ad;
+	background: #3fc8c9;
 	width: 40%;
 	border: 0;
 	padding: 5px;
 	color: #070707;
 	font-size: 10px;
 	cursor: pointer;
+}
+
+.card-buttons:hover {
+	background: #5deeee;
+}
+
+.column-button {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-radius: 5px;
+	margin-top: 5px;
+	outline: 0;
+	background: #747272;
+	width: 40%;
+	border: 0;
+	padding: 7px;
+	color: #ffffff;
+	font-size: 10px;
+	cursor: pointer;
+}
+
+.column-button:hover {
+	background: #929191;
 }
