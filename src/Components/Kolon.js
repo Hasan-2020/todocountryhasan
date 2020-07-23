@@ -9,6 +9,9 @@ function Kolon({ groups, deleteColon }) {
 		return (
 			<section className="column" key={group.groupId + Math.random()}>
 				<h2 className="column-header">{group.groupName}</h2>
+				<button className="column-button-add" type="button">
+					Add Cards
+				</button>
 				<button
 					onClick={() => {
 						deleteColon(i);
@@ -18,6 +21,7 @@ function Kolon({ groups, deleteColon }) {
 				>
 					Delete Column
 				</button>
+
 				<Card groupId={group.groupId} Cards={group.cards} />
 			</section>
 		);

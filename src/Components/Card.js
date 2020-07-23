@@ -16,6 +16,7 @@ function Card({ Cards = ['any'], groupId, deleteCard }) {
 						<div className="card-info-right">
 							<div className="card-info-right-image">IMG</div>
 							<div className="card-info-right-date">{card.date}</div>
+							<input placeholder="Edit Cards"></input>
 						</div>
 					</div>
 					<div>

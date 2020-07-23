@@ -18,7 +18,7 @@ function Group(props) {
 	if (block.length === 0) {
 		return (
 			<center>
-				<h1>Boyle Bir Grup Yok</h1>
+				<h1>There is no group like this </h1>
 			</center>
 		);
 	}
